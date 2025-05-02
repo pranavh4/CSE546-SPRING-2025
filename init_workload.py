@@ -137,7 +137,8 @@ try:
 
     exit_status     = stdout.channel.recv_exit_status()
     error_output    = stderr.read().decode()
-
+    print(f"Exit status: {exit_status}")
+    print(f"Error output: {error_output}")
     print(f" -- starting remote cleanup ..")
     stdin, stdout, stderr = ssh_client.exec_command(cleanup_cmd)
     ssh_client.close()
